@@ -17,7 +17,8 @@ body {
 }
 
 h6 {
-  max-width: 15%;
+  font-size: 1vw;
+  max-width: 20vw;
   padding-left: 40px;
   padding-top: 100px;
 }
@@ -30,11 +31,13 @@ img {
 p {
   font-family: "adobe-garamond-pro", serif;
   font-weight: 400;
+  /* max-width: 40vw; */
   /* width: 50%; */
   /* this is why the credits paragraphs were so thin */
   padding-left: 20%;
   padding-top: 100px;
   /* part of your system! */
+  transition: all 0.2s ease;
 }
 
 .info {
@@ -114,8 +117,24 @@ ul {
 }
 
 .large-img {
+  padding-top: 150px;
   display: block;
   max-width: 90%;
+}
+
+.left {
+  padding-left: 50px;
+  padding-top: 150px;
+}
+
+.right {
+  padding-top: 150px;
+  padding-bottom: 200px;
+}
+
+.center {
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 
 .black {
@@ -130,25 +149,32 @@ ul {
 .credits-container {
   display: block;
   justify-content: space-between;
-  margin-left: 20%;
-  margin-right: 20%;
   padding-bottom: 60px;
 }
 
 .credits-column {
   display: flex;
+  justify-content: flex-end;
   flex-direction: row;
-  justify-content: space-between;
+  padding-right: 40px;
 }
 
-.column {
-  width: 40%;
+.credits-paragraph {
+  display: flex;
 }
 
 .pullquote {
   text-align: center;
   font-size: 2.4vw;
   padding-bottom: 100px;
+}
+
+.credit-span {
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px 0;
+  max-width: 50vw;
 }
 
 footer {
@@ -163,4 +189,26 @@ footer {
 .footerbar {
   display: flex;
   justify-content: space-between;
+}
+
+@media (max-width: 800px) {
+  .credits-column {
+    flex-direction: column; /* Stack columns vertically */
+    align-items: center; /* Center the columns */
+    margin: 0 auto; /* Center the section */
+    padding: 10px;
+  }
+  .column {
+    width: 90%; /* Make each column span full width */
+  }
+  .credits-paragraph {
+    justify-content: center;
+    padding: 10px;
+  }
+  .info {
+    width: 400px;
+  }
+  p {
+    padding-left: 50px;
+  }
 }
